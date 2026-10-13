@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>株式会社オマージュ｜人材のご相談</title>
+
+<!-- ============================================================
+★ 設定
+============================================================ -->
+<script>
+var CONFIG = {
+GA_ID: 'G-SE4BXZT3WW', // GA4の測定ID
+SITE_URL: 'https://www.hommage-osc.co.jp/company', // 会社サイト
+FORM_URL: 'https://hommage-osc.github.io/contact-form-2/', // 相談フォーム
+FORM_PREFILL_KEY: '', // 任意：Googleフォームの顧客ID欄 例 'entry.123456789'
+LINE_URL: 'https://line.me/ti/p/YVMpBZuYqT', // LINE公式アカウントの友だち追加URL
+TEL: '090-0668-3899', // 電話番号（ハイフンありでOK）
+OFFER: '初回ご利用時、スタッフの交通費を無料にいたします' // 初回特典
+};
+</script>
+<!-- ============================================================ -->
+
+<script>
+// GA4 読み込み
+(function(){
+var s = document.createElement('script');
+s.async = true;
+s.src = 'https://www.googletagmanager.com/gtag/js?id=G-SE4BXZT3WW'
+document.head.appendChild(s);
+})();
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', CONFIG.GA_ID);
+
+var params = new URLSearchParams(location.search);
+var CUSTOMER_ID = params.get('utm_content') || 'unknown';
+
+// 着地（スキャン）を記録
+gtag('event', 'flyer_scan', { customer_id: CUSTOMER_ID });
+</script>
+
+<style>
+:root{
+--main:#1f4e8c; --main-dark:#163a69; --accent:#e8792b;
+--line:#06c755; --bg:#f5f7fa; --text:#222; --sub:#666; --card:#fff;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:"Hiragino Kaku Gothic ProN","Noto Sans JP","Yu Gothic",sans-serif;
+background:var(--bg);color:var(--text);line-height:1.7}
+.wrap{max-width:520px;margin:0 auto;padding:0 16px 40px}
+header{background:var(--main);color:#fff;padding:36px 16px 32px;text-align:center}
+header .company{font-size:13px;opacity:.85;letter-spacing:.05em}
+header h1{font-size:22px;line-height:1.5;margin-top:10px}
+header p{font-size:14px;margin-top:10px;opacity:.95}
+.offer{background:#fff4ea;border:2px solid var(--accent);border-radius:12px;
+padding:14px 16px;margin:-18px 0 0;position:relative;text-align:center}
+.offer .tag{display:inline-block;background:var(--accent);color:#fff;font-size:12px;
+font-weight:bold;padding:2px 10px;border-radius:99px;margin-bottom:6px}
+.offer p{font-size:15px;font-weight:bold;color:#8a3d0a}
+h2{font-size:17px;margin:28px 0 12px;padding-left:10px;border-left:4px solid var(--main)}
+.cards{display:grid;gap:10px}
+.card{background:var(--card);border-radius:12px;padding:14px 16px;
+box-shadow:0 1px 3px rgba(0,0,0,.06)}
+.card b{color:var(--main);font-size:15px}
+.card p{font-size:13px;color:var(--sub);margin-top:2px}
+.cta{display:grid;gap:10px;margin-top:8px}
+.btn{display:block;text-align:center;text-decoration:none;font-weight:bold;
+font-size:16px;padding:15px;border-radius:12px;color:#fff}
+.btn small{display:block;font-size:11px;font-weight:normal;opacity:.9}
+.btn-form{background:var(--accent)}
+.btn-line{background:var(--line)}
+.btn-tel{background:var(--main)}
+.btn-site{background:#fff;color:var(--main);border:2px solid var(--main)}
+footer{text-align:center;font-size:12px;color:var(--sub);margin-top:32px}
+</style>
+</head>
+<body>
+
+<header>
+<div class="company">株式会社オマージュ</div>
+<h1>人手が足りない日に、<br>必要な人数だけ。</h1>
+<p>倉庫軽作業・イベント設営・オフィス移転<br>スタッフ派遣のご相談はこちら</p>
+</header>
+
+<div class="wrap">
+
+<div class="offer" id="offer">
+<span class="tag">チラシをご覧の方へ　初回特典</span>
+<p id="offer-text"></p>
+</div>
+
+<h2>オマージュが選ばれる理由</h2>
+<div class="cards">
+<div class="card"><b>1名・1日から対応</b><p>繁忙期のスポット依頼も、少人数からご相談いただけます。</p></div>
+<div class="card"><b>倉庫・イベント・移転に特化</b><p>現場経験のあるスタッフを中心に手配します。</p></div>
+<div class="card"><b>急なご依頼もまずはご相談を</b><p>日程・人数・作業内容をお伺いし、手配可否をすぐにご連絡します。</p></div>
+</div>
+
+<h2>お問い合わせ</h2>
+<div class="cta">
+<a class="btn btn-form" id="btn-form" data-cta="form" target="_blank" rel="noopener">
+無料相談フォーム<small>約1分・お見積りのみもOK</small></a>
+<a class="btn btn-line" id="btn-line" data-cta="line" target="_blank" rel="noopener">
+LINEで気軽に相談<small>担当者がチャットでお答えします</small></a>
+<a class="btn btn-tel" id="btn-tel" data-cta="tel">
+電話で相談する<small id="tel-label"></small></a>
+<a class="btn btn-site" id="btn-site" data-cta="site" target="_blank" rel="noopener">
+会社サイトを見る</a>
+</div>
+
+<footer>© 株式会社オマージュ</footer>
+</div>
+
+<script>
+// UTMを引き継いだリンクを作る
+function withUtm(base){
+if(!base) return '#';
+var sep = base.indexOf('?') === -1 ? '?' : '&';
+return location.search ? base + sep + location.search.slice(1) : base;
+}
+
+// 特典
+if(CONFIG.OFFER){ document.getElementById('offer-text').textContent = CONFIG.OFFER; }
+else { document.getElementById('offer').style.display = 'none'; }
+
+// フォーム（任意で顧客IDを自動入力）
+var formUrl = CONFIG.FORM_URL;
+if(CONFIG.FORM_PREFILL_KEY){
+var s = formUrl.indexOf('?') === -1 ? '?' : '&';
+formUrl += s + 'usp=pp_url&' + CONFIG.FORM_PREFILL_KEY + '=' + encodeURIComponent(CUSTOMER_ID);
+}
+document.getElementById('btn-form').href = formUrl;
+document.getElementById('btn-line').href = CONFIG.LINE_URL;
+document.getElementById('btn-tel').href = 'tel:' + CONFIG.TEL.replace(/[^0-9+]/g,'');
+document.getElementById('tel-label').textContent = CONFIG.TEL + '（平日 9:00〜18:00）';
+document.getElementById('btn-site').href = withUtm(CONFIG.SITE_URL);
+
+// ボタンのクリックを記録
+document.querySelectorAll('[data-cta]').forEach(function(el){
+el.addEventListener('click', function(){
+gtag('event', 'cta_click', {
+cta: el.getAttribute('data-cta'),
+customer_id: CUSTOMER_ID,
+transport_type: 'beacon'
+});
+});
+});
+</script>
+</body>
+</html>
